@@ -34,8 +34,8 @@
             <!-- Short name-->
             <div>
                 <label for="dish">Favorite Dish Number: </label>
-                <input type="text" id="dish" name="dish" ng-model="signUpCtrl.favoriteDish">
-                <span ng-if="!signUpCtrl.foundDish">No such menu number exists</span>
+                <input type="text" id="dish" name="dish" ng-model="signUpCtrl.favoriteDish" dish-exists>
+                <span ng-if="signupform.dish.$invalid">No such menu number exists</span>
             </div>
             <!-- Submit form-->
             <div>
