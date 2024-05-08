@@ -1,0 +1,43 @@
+<div class="container">
+    <div ng-if="myInfoCtrl.user === null" class="text-center">
+        <h2>Not Signed Up Yet!</h2>
+        <a href="#/sign-up">Sign Up Now!</a>
+    </div>
+    <div ng-if="myInfoCtrl.user !== null">
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="2" class="text-center">Your Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>First Name</b></td>
+                        <td>{{myInfoCtrl.user.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Last Name</b></td>
+                        <td>{{myInfoCtrl.user.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Email</b></td>
+                        <td>{{myInfoCtrl.user.emailAddr}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Phone Number</b></td>
+                        <td>{{myInfoCtrl.user.phoneNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Favorite Dish</b></td>
+                        <td>
+                            <p>{{myInfoCtrl.user.favoriteDish.name}}</p>
+                            <img ng-src="images/menu/{{myInfoCtrl.getImgCategoryName()[0]}}/{{myInfoCtrl.user.favoriteDish.short_name}}.jpg">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+        </div>
+    </div>
+
+</div>

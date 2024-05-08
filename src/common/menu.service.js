@@ -22,6 +22,18 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getItemFromCategory = function (shortName) {
+    var itemNumberString = shortName.match(/[0-9]+/);
+    var itemCategory = shortName.match(/^[a-zA-Z]+/)
+        
+    var itemNumber = itemNumberString - 1;
+
+    return $http.get(ApiPath + `/menu_items/${itemCategory}/menu_items/${itemNumber}.json`)
+      .then(function (response) {
+        return response.data;
+      })
+  }
+
 }
 
 
